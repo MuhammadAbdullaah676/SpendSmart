@@ -2,8 +2,8 @@ import React from 'react';
 
 const ExpenseTotal = () => {
 	return (
-		<div className='alert alert-primary'>
-			<span>Spent so far: £1000</span>
+		<div className='alert alert-primary'color='light pink'>
+			Spent so far: RS 1000
 		</div>
 	);
 };
