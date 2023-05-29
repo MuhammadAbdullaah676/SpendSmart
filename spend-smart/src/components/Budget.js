@@ -1,9 +1,12 @@
-import React from 'react';
+
+import React,{useContext} from 'react';
+
 
 const Budget = () => {
+	const {budget}=useContext();
 	return (
-		<div className='alert alert-secondary'color='teapink'>
-			Budget: RS 2000
+		<div className='alert alert-secondary'>
+			Budget: RS {budget}
 		</div>
 	);
 };
