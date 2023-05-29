@@ -65,14 +65,14 @@ const AddExpenseForm = () => {
 						type='text'
 						className='form-control'
 						id='cost'
-						
+						 iu7465
 						name="expenseCost"
 						onChange={props.handleChange}
 						value={props.values.expenseCost}
 
 						
 					></input>
-					{/* validation messegs */}
+g					{/* validation messegs */}
 					 {props.touched.expenseCost && props.errors.expenseCost ? (
                       <div style={{ color: "red"}}> {props.errors.expenseCost}</div>
                      ) : null}
