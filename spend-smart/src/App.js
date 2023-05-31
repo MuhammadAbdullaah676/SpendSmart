@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Navbar from "../src/Components/Navbar";
+import BudgetTrackerDashboard from "./Components/dashboard";
 
 const Home = () => <h2>Home Component</h2>;
 const Budget = () => <h2>Budget Component</h2>;
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
+          <Route path="/dashboard" element={<BudgetTrackerDashboard />} />
         </Routes>
       </Router>
     </div>
