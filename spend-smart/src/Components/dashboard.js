@@ -17,23 +17,23 @@ const BudgetTrackerDashboard = () => {
     }
   };
 
-  const getTransactionColor = (type) => {
-    return type === 'expense' ? 'text-danger' : 'text-success';
+  const getCardColor = (type) => {
+    return type === 'expense' ? 'bg-danger' : 'bg-success';
   };
 
   return (
     <div className="container">
-      <h1 className="text-center mb-4">Budget Tracker Dashboard</h1>
+      <h1 className="text-center mb-4">Spend Smart Dashboard</h1>
       <div className="row">
         {transactions.map((transaction) => (
           <div key={transaction.id} className="col-md-6 col-lg-4 mb-3">
-            <div className="card">
+            <div className={`card ${getCardColor(transaction.type)}`}>
               <div className="card-body">
-                <h5 className="card-title">{transaction.name}</h5>
-                <h6 className={`card-subtitle mb-2 ${getTransactionColor(transaction.type)}`}>
+                <h5 className="card-title text-white">{transaction.name}</h5>
+                <h6 className="card-subtitle mb-2 text-white">
                   {transaction.type === 'expense' ? 'Expense' : 'Savings'}
                 </h6>
-                <p className="card-text">Amount: {transaction.amount}</p>
+                <p className="card-text text-white">Amount: {transaction.amount}</p>
               </div>
             </div>
           </div>
