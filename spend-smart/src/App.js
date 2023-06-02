@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AboutUs from "./AboutUs page/AboutUs";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Navbar from "../src/Components/Navbar";
+import BudgetTrackerDashboard from "./Components/dashboard";
+
+const Home = () => <h2>Home Component</h2>;
+const Budget = () => <h2>Budget Component</h2>;
+const Expenditures = () => <h2>Expenditures Component</h2>;
+const Transaction = () => <h2>Transaction Component</h2>;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/budget" element={<Budget />} />
+          <Route path="/expenditures" element={<Expenditures />} />
+          <Route path="/transaction" element={<Transaction />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
+          <Route path="/dashboard" element={<BudgetTrackerDashboard />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
