@@ -1,4 +1,7 @@
+
 import "./App.css";
+import Home from './pages';
+import SignInPage from './pages/signin';
 import AboutUs from "./AboutUs page/AboutUs";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
@@ -25,6 +28,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/dashboard" element={<BudgetTrackerDashboard />} />
+            <Route path="/" element={<Home/>}/>
+        <Route path="/signin" element={<SignInPage/>} />
         </Routes>
       </Router>
     </div>
