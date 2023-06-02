@@ -1,31 +1,29 @@
-import "./App.css";
-import AboutUs from "./AboutUs page/AboutUs";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import Navbar from "../src/Components/Navbar";
+import React from "react";
+//import Formik1 from "./component/Formik";
+//import PostList from "./component/card/Card";
+//import UserList from "./component/card/Table";
 
-const Home = () => <h2>Home Component</h2>;
-const Budget = () => <h2>Budget Component</h2>;
-const Expenditures = () => <h2>Expenditures Component</h2>;
-const Transaction = () => <h2>Transaction Component</h2>;
+
+
+import {Header} from './components/Header'
+import{Balance} from './components/Balance'
+import {IncomeExpenses} from './components/IncomeExpenses'
+import {TransactionList} from './components/TransactionList'
+import{AddTransaction} from './components/AddTransaction'
+import{GlobalProvider} from './components/context/GlobalState'
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/budget" element={<Budget />} />
-          <Route path="/expenditures" element={<Expenditures />} />
-          <Route path="/transaction" element={<Transaction />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Register />} />
-        </Routes>
-      </Router>
+    <GlobalProvider>
+    <Header/>
+    <div className="container">
+     <Balance/>
+     <IncomeExpenses/>
+     <TransactionList/>
+     <AddTransaction/>
     </div>
+    </GlobalProvider>
   );
 }
 
